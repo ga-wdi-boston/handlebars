@@ -27,7 +27,7 @@ Suppose that we just queried our back-end, a song API, and received some data in
 {"title":"Johnny B. Goode","album":"Chuck Berry Is on Top","artist":"Chuck Berry"},
 {"title":"Come Together","album":"Abbey Road","artist":"The Beatles"},
 {"title":"Hey Jude","album":"Revolution (B-side)","artist":"The Beatles"},
-{"title":"San Diego Serenade","album":"Heart of Saturday Night","artist":"Tom Waits"}]
+{"title":"Get Behind the Mule","album":"Mule Variations","artist":"Tom Waits"}]
 ```
 
 Our front-end app might then parse that JSON and give us an array of JavaScript objects, which we can then iterate through.
