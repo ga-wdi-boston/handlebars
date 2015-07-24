@@ -66,7 +66,7 @@ var newHTML = data.map(function(song){
 $("#songs").html(newHTML);
 ```
 
-This structure is particularly interesting because of separation of concerns - it completely divorces the process of generating each HTML snippet from both the process of combining the snippets _and_ the process of adding the HTML to the page. If we'd wanted to re-use this snippet in another context, it'd be pretty easy to do so; we'd just need to give the function a name and invoke it in both places.
+This last approach is particularly interesting because of separation of concerns - it completely divorces the process of generating each HTML snippet from both the process of combining the snippets _and_ the process of adding the HTML to the page. If we'd wanted to re-use this snippet in another context, it'd be pretty easy to do so; we'd just need to give the function a name and invoke it in both places.
 
 ```javascript
 var songTemplate = function(song) {
