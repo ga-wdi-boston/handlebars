@@ -6,8 +6,8 @@
 
 By the end of this lesson, students should be able to:
 
-- Create and use Handlebars templates.
-- Integrate Handlebars into a Rails API.
+- Create and use Handlebars templates to render JSON data from an API.
+- Create and use custom Handlebars helpers.
 
 ## Prerequisites
 
