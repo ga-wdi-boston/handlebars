@@ -233,7 +233,7 @@ Handlebars.registerPartial('someNameForPartial', '<li> {{name}} {{age}} </li>');
 
 Let's restructure our template above as two separate templates, using partials.
 
-#####Before
+#####HTML :: Before
 ```html
 <script id="song-index" type="text/x-handlebars-template">
   {{#each songs}}
@@ -251,7 +251,7 @@ Let's restructure our template above as two separate templates, using partials.
 </script>
 ```
 
-#####After
+#####HTML :: After
 ```html
 <script id="song-partial" type="text/x-handlebars-template">
   <h4>{{allCaps title}}</h4>
@@ -272,6 +272,7 @@ Let's restructure our template above as two separate templates, using partials.
 </script>
 ```
 
+##### JavaScript
 ```javascript
 Handlebars.registerHelper('allCaps', function (text){
   return text.toUpperCase();
