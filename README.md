@@ -221,5 +221,70 @@ Handlebars.registerHelper('allCaps', function (text){
 
 Take your solution to the previous exercise and implement a custom helper of your own design. Experiment!
 
+## Handlebars Partials
+A **partial** is a template that gets referenced and used by other templates. Many templating frameworks implement partials, and Handlebars is no exception.
+
+Partials are created in a very similar way to custom helpers:
+
+```javascript
+Handlebars.registerPartial('someNameForPartial', '<li> {{name}} {{age}}</li>');
+```
+>You can pass in either raw Handlebars code or a compiled template as the second argument.
+
+Let's restructure our template above as two separate templates, using partials.
+
+#####Before
+```html
+<script id="song-index" type="text/x-handlebars-template">
+  {{#each songs}}
+    <li>
+      <h4>{{allCaps title}}</h4>
+      {{#if artist}}
+        By {{artist}}, from the album '<em>{{album}}</em>'
+      {{else}}
+        Artist unknown.
+      {{/if}}
+      {{#ifvalue artist value="The Beatles"}} {{bold}}Fun Fact{{/bold}}: The Beatles were at one point named 'The Silver Beetles'. </ {{/ifvalue}}
+    </li>
+    {{!-- This looks a lot like normal HTML, so it's really easy to write and spot-check. --}}
+  {{/each}}
+</script>
+```
+
+#####After
+```html
+<script id="song-partial" type="text/x-handlebars-template">
+  <h4>{{allCaps title}}</h4>
+  {{#if artist}}
+    By {{artist}}, from the album '<em>{{album}}</em>'
+  {{else}}
+    Artist unknown.
+  {{/if}}
+</script>
+<script id="song-index" type="text/x-handlebars-template">
+  {{#each songs}}
+    <li>
+      {{> songPartial }}
+      {{#ifvalue artist value="The Beatles"}} {{bold}}Fun Fact{{/bold}}: The Beatles were at one point named 'The Silver Beetles'. </ {{/ifvalue}}
+    </li>
+    {{!-- This looks a lot like normal HTML, so it's really easy to write and spot-check. --}}
+  {{/each}}
+</script>
+```
+
+By default, partials run under the context that they're called from. In other words, if `artist` and `title` are visible inside `#song-index`, they're visible inside `#song-partial`. However, it's possible to set a different context for the partial to draw from by passing in that context during the call to the partial, i.e.
+
+`{{> songPartial someOtherContext }}`
+
+You can even pass partials data in a similar way.
+
+`{{> songPartial rating=5 }}`
+
+Now, `songPartial` will have access to `ratings` within its context.
+
+### Your Turn : Handlebars Partials
+
+Refactor your code from one of the previous exercises to use at least one partial.
+
 ## Additional References
 - [Handlebars documentation](http://handlebarsjs.com)
