@@ -108,7 +108,7 @@ Handlebars is a JavaScript module that allows us to easily set up complex templa
 2. Create a templating function by running `Handlebars.compile` inside our JavaScript code.
 
   ```javascript
-    var songsIndexTemplate = Handlebars.compile($('#song-index').html());
+    var songIndexTemplate = Handlebars.compile($('#song-index').html());
   ```
 
   Handlebars's `compile` method reads in all the content found inside our script from step 1 and parses it, returning a templating function.
@@ -118,16 +118,16 @@ Handlebars is a JavaScript module that allows us to easily set up complex templa
 3. Call the templating function with an **object** as a parameter. _**The key in the object must match the top-level input to the template.**_
 
   ```javascript
-    var newHTML = songsIndexTemplate({songs: data});
+    var newHTML = songIndexTemplate({songs: data});
   ```
-
-  > This step can also easily be combined with step 4.
 
 4. Set some element's HTML to the result of calling our templating function
 
   ```javascript
     $("#songs").html(newHtml);
   ```
+
+  > This step can also easily be combined with step 3.
 
 ### Your Turn :: Handlebars Basics
 
@@ -224,12 +224,12 @@ Take your solution to the previous exercise and implement a custom helper of you
 ## Handlebars Partials
 A **partial** is a template that gets referenced and used by other templates. Many templating frameworks implement partials, and Handlebars is no exception.
 
-Partials are created in a very similar way to custom helpers:
+Partials must be registered in order to be used, just like how we needed to register custom helpers.
 
 ```javascript
-Handlebars.registerPartial('someNameForPartial', '<li> {{name}} {{age}}</li>');
+Handlebars.registerPartial('someNameForPartial', '<li> {{name}} {{age}} </li>');
 ```
->You can pass in either raw Handlebars code or a compiled template as the second argument.
+>You can pass in either a raw Handlebars string or a compiled template as the second argument.
 
 Let's restructure our template above as two separate templates, using partials.
 
@@ -271,6 +271,21 @@ Let's restructure our template above as two separate templates, using partials.
   {{/each}}
 </script>
 ```
+
+```javascript
+Handlebars.registerHelper('allCaps', function (text){
+  return text.toUpperCase();
+});
+
+// songPartial depends on allCaps, so it must come after it.
+var songPartialTemplate = Handlebars.compile($("#song-partial").html());
+Handlebars.registerPartial('songPartial', songPartialTemplate);
+
+// songIndexTemplate depends on songPartialTemplate
+var songIndexTemplate = Handlebars.compile($('#song-index').html());
+```
+
+> It's important that we define any partial template before we define a template that uses it.
 
 By default, partials run under the context that they're called from. In other words, if `artist` and `title` are visible inside `#song-index`, they're visible inside `#song-partial`. However, it's possible to set a different context for the partial to draw from by passing in that context during the call to the partial, i.e.
 
