@@ -38,7 +38,7 @@ data.forEach(function(song){
 });
 ```
 
-If we wanted to produce an `<li>` for each of these movies, and add them to a `<ul>` with the id `songs`, we could do it like this:
+If we wanted to produce an `<li>` for each of these songs, and add them to a `<ul>` with the id `songs`, we could do it like this:
 
 ```javascript
 data.forEach(function(song){
@@ -81,7 +81,7 @@ $("#tom-waits-songs").html(myHTML);
 
 ### Your Turn :: 'Templatizing' Our Views
 
-Fork and clone this repo, and then open up the `front-end` directory; there, you'll find an HTML file (`index.html`) and a JS file (`movies.js`).
+Fork and clone this repo, and then open up the `lab-front-end` directory; there, you'll find an HTML file (`index.html`) and a JS file (`movies.js`).
 
 As in the example above, create a `movieTemplate` function and use it to generate HTML inside the `<ul>` with id `movies`. The format of each `<li>` should be like this: "'Sahara', directed by Zoltan Korda and released in 1943."
 
@@ -131,7 +131,7 @@ Handlebars is a JavaScript module that allows us to easily set up complex templa
 
 ### Your Turn :: Handlebars Basics
 
-Redo the previous exercise; this time using Handlebars!
+Redo the previous exercise, with movies, from scratch - this time using Handlebars!
 
 ## Handlebars Helpers
 
@@ -292,15 +292,15 @@ By default, partials run under the context that they're called from. In other wo
 
 `{{> songPartial someOtherContext }}`
 
-You can even pass partials data in a similar way.
+You can also pass partials raw data in a similar way.
 
-`{{> songPartial rating=5 }}`
+`{{> songPartial songLength=190 }}`
 
-Now, `songPartial` will have access to `ratings` within its context.
+Now, `songPartial` will have access to `songLength` within its context.
 
 ### Your Turn : Handlebars Partials
 
-Refactor your code from one of the previous exercises to use at least one partial.
+Refactor your code from one of the previous exercise to use at least one partial.
 
 ## Additional References
 - [Handlebars documentation](http://handlebarsjs.com)
