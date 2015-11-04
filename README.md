@@ -162,8 +162,8 @@ Unfortunately, we can't do much more than test for existence out of the box - fo
 To write a custom helper, use `Handlebars.registerHelper`.
 
 ```javascript
-Handlebars.registerHelper('ifvalue', function (conditional, options){
-  if (options.hash.value === conditional) {
+Handlebars.registerHelper('ifvalue', function (conditionalVariable, options){
+  if (conditionalVariable === options.hash.value) {
     return options.fn(this)
   } else {
     return options.inverse(this);
