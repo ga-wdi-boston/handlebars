@@ -233,7 +233,7 @@ Handlebars.registerPartial('someNameForPartial', '<li> {{name}} {{age}} </li>');
 
 Let's restructure our template above as two separate templates, using partials.
 
-#####HTML :: Before
+#####HTML Without Partials
 ```html
 <script id="song-index" type="text/x-handlebars-template">
   {{#each songs}}
@@ -251,7 +251,7 @@ Let's restructure our template above as two separate templates, using partials.
 </script>
 ```
 
-#####HTML :: After
+#####HTML With Partials
 ```html
 <script id="song-partial" type="text/x-handlebars-template">
   <h4>{{allCaps title}}</h4>
