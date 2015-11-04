@@ -302,5 +302,36 @@ Now, `songPartial` will have access to `songLength` within its context.
 
 Refactor your code from one of the previous exercise to use at least one partial.
 
+## Pre-Compiling Handlebars
+In addition to compiling Handlebars templates from within our JS code at the moment we need them, Handlebars gives us the option of pre-compiling our templates from the console, before we start our application. This is useful for several reasons:
+1. It can speed up rendering on the client side.
+2. It can reduce the required runtime size of the Handlebars library.
+3. Precompiling gives us access to several other performance optimizations.
+3. Most importantly, we **must** precompile if we ever want to use Handlebars to render templates on the _server_ (more on this in Unit 3).
+
+To use this option, we must first make the Handlebars module available globally by running
+`npm install -g handlebars`
+
+Then, we place each of our Handlebars templates into a separate `.handlebars` file; the contents should be exactly the same as those from our previous templates.
+
+```handlebars
+{!-- Hello.handlebars --}
+<p> Hello, {{name}}!</p>
+```
+
+Next, we run `handlebars <input file> -f <output file>` from Bash - this will precompile our template and put the result in the output file. We must link to this output file from our HTML in order for our templates to be reachable. For that reason, we probably want to use one single output file for all of our templates.
+
+```bash
+$ handlebars Hello.handlebars -f templates.js
+```
+```html
+<script src="templates.js"></script>
+```
+
+Finally, we need to actually access our pre-compiled templates from within Handlebars; we can do this by writing ```javascript
+var compiledTemplate = Handlebars.templates['hello'];
+var newHTML = compiledTemplate({name: "World"});
+```
+
 ## Additional References
 - [Handlebars documentation](http://handlebarsjs.com)
