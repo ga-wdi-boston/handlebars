@@ -130,7 +130,6 @@ partial.
 
 ### Challenge
 - Make one button and have it alternate between users and books when clicked.
-- Using the examples in `scripts/helpers` make your own custom helper.
 - Make use of `{{this}}` helper.
 
 ## Additional Resources
