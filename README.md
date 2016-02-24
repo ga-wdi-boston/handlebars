@@ -21,11 +21,17 @@ By the end of this, developers should be able to:
 
 1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
     this repository.
-1.  Install dependencies with `bundle install`.
+1.  Install dependencies with `npm install`.
 
 ## What is Handlebars
 
 Just a templating engine for JS.
+
+But a little more:
+
+*As noted in the introduction: Handlebars.js is a compiler built with JavaScript that takes any HTML and Handlebars expression and compiles them to a JavaScript function. This derived JavaScript function then takes one parameter, an object—your data—and it returns an HTML string with the object properties’ values inserted (interpolated) into the HTML. So, you end up with a string (HTML) that has the values from the object properties inserted in the relevant places, and you insert the string on a page.*
+
+[Javascript is Sexy: Handlebars](http://handlebarsjs.com/)
 
 Handlebars Docs: (http://handlebarsjs.com/)
 
@@ -130,7 +136,8 @@ partial.
 ## Additional Resources
 
 -   [Handlebars Docs](http://handlebarsjs.com/)
--   [Handlebars in Ten Minutes](http://tutorialzine.com/2015/01/learn-handlebars-in-10-minutes/).
+-   [Handlebars in Ten Minutes](http://tutorialzine.com/2015/01/learn-handlebars-in-10-minutes/)
+-   [Javascript is Sexy: Handlebars](http://handlebarsjs.com/)
 
 ## [License](LICENSE)
 
