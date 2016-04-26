@@ -88,7 +88,7 @@ following:
 
 - What is happening in the `scripts/index.js` file?
 - How many times is `book-listing.handlebars` run?
-- Draw the order in which each seperate file is accessed.
+- Draw the order in which each separate file is accessed.
 - Be able to explain in plain english what is happening.
 - What happens if you move the line that defines `bookListingTemplate`?
 - Experiment with `console.log()` and `debugger` to aid in your understanding.
@@ -100,6 +100,9 @@ class.
 
 Continuing with what was learned in the previous lab let's discuss what you
 discovered trying to answer the questions.
+
+What do you think would happen if I tried to add an event handler to something
+contained in my template before it was rendered?
 
 Let's look through the documentation and see if there is anyway we can improve
 this code.
@@ -118,7 +121,7 @@ Rules:
 ## Lab: Now on Your Own
 
 You may have noticed a few things about my demo API (aside from lack of
-cretivity). Along with being complete insecure and allowing any type of request,
+creativity). Along with being complete insecure and allowing any type of request,
 it also has a `/users` path. Please do the following:
 
 - Create two buttons somewhere on the page.
