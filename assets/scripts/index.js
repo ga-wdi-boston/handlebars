@@ -8,15 +8,15 @@
 let getBooks = function(){
   $.ajax({
     url: "http://book-json.herokuapp.com/books",
-    method: 'GET',
-    dataType: 'json'
+    // method: 'GET',
+    // dataType: 'json'
   }).done(function(books){
     displayBooks(books);
   });
 };
 
 let displayBooks = function(books){
-  let bookListingTemplate = require('./book-listing.handlebars');
+  let bookListingTemplate = require('./templates/book-listing.handlebars');
   for (let i = 0; i < books.length; i++) {
     $('.content').append(bookListingTemplate({
       books:[
