@@ -29,7 +29,13 @@ Just a templating engine for JS.
 
 But a little more:
 
-*As noted in the introduction: Handlebars.js is a compiler built with JavaScript that takes any HTML and Handlebars expression and compiles them to a JavaScript function. This derived JavaScript function then takes one parameter, an object—your data—and it returns an HTML string with the object properties’ values inserted (interpolated) into the HTML. So, you end up with a string (HTML) that has the values from the object properties inserted in the relevant places, and you insert the string on a page.*
+*As noted in the introduction: Handlebars.js is a compiler built with JavaScript
+that takes any HTML and Handlebars expression and compiles them to a JavaScript
+function. This derived JavaScript function then takes one parameter, an
+object—your data—and it returns an HTML string with the object properties’
+values inserted (interpolated) into the HTML. So, you end up with a string
+(HTML) that has the values from the object properties inserted in the relevant
+places, and you insert the string on a page.*
 
 [Javascript is Sexy: Handlebars](http://handlebarsjs.com/)
 
@@ -70,7 +76,7 @@ Alternatively, we could specify some string to represent all of the HTML we
 want to add, and then add it to the `<ul>` in one fell swoop.
 
 ```javascript
-var newHTML = "";
+let newHTML = "";
 data.forEach(function(song){
   newHTML += "<li><h4>" + song.title + "</h4> By " + song.artist + ", from the album '<em>" + song.album + "</em>'</li>";
 });
@@ -86,17 +92,17 @@ Handlebars and front end templating will make a whole lot more sense once you
 have a chance to look at it.  In your squads discuss and consider the
 following:
 
-- What is happening in the `scripts/index.js` file?
-- How many times is `book-listing.handlebars` run?
-- Draw the order in which each separate file is accessed.
-- Be able to explain in plain english what is happening.
-- What happens if you move the line that defines `bookListingTemplate`?
-- Experiment with `console.log()` and `debugger` to aid in your understanding.
+-   What is happening in the `scripts/index.js` file?
+-   How many times is `book-listing.handlebars` run?
+-   Draw the order in which each separate file is accessed.
+-   Be able to explain in plain english what is happening.
+-   What happens if you move the line that defines `bookListingTemplate`?
+-   Experiment with `console.log()` and `debugger` to aid in your understanding.
 
 Make sure to note any questions you come acorss and we'll go over them as a
 class.
 
-## Discussion: What was discovered?
+## Discussion: What was discovered
 
 Continuing with what was learned in the previous lab let's discuss what you
 discovered trying to answer the questions.
@@ -109,31 +115,21 @@ this code.
 
 [Handlebars Helpers Documentation](http://handlebarsjs.com/builtin_helpers.html)
 
-## Lab: Refactor with some help(ers)
+## Code-Along: Let's clean this up
 
-Using the documentation discussed refactor my code.
+Now given what have discoverd and discussed about Handlebars, let's reorganize
+things and use an API that we have locally -
+[LibraryAPI](https://github.com/ga-wdi-boston/library-api).
 
-Rules:
+## Lab: Refactor, clean up and incorporate some Auth
 
-- __NO FOR LOOPS__
-- You should try to do as much as you can utilizing Handlebars
+Using documentation and your squad, work on getting up the page
 
-## Lab: Now on Your Own
-
-You may have noticed a few things about my demo API (aside from lack of
-creativity). Along with being complete insecure and allowing any type of request,
-it also has a `/users` path. Please do the following:
-
-- Create two buttons somewhere on the page.
-- One button should be a "users" button, the other should be a "books" button.
-- When each button is clicked the button should clear the content div and
-replace the book/user listing with the other.
--Do this making use of all the handlebars features we discussed and at least one
-partial.
-
-### Challenge
-- Make one button and have it alternate between users and books when clicked.
-- Make use of `{{this}}` helper.
+-   Unless you are successfully logged in, you cannot see any books or buttons
+-   Have two buttons, 'All Books' and 'Titles', and when you click one, it show's
+just the information on the button
+-   When each button is clicked the button should clear the content div and
+replace the all_books/titles listing with the other.
 
 ## Additional Resources
 

@@ -3,17 +3,7 @@
 // user require with a reference to bundle the file and use it in this file
 // let example = require('./example');
 
-
-
-let getBooks = function(){
-  $.ajax({
-    url: "http://book-json.herokuapp.com/books",
-    // method: 'GET',
-    // dataType: 'json'
-  }).done(function(books){
-    displayBooks(books);
-  });
-};
+const authEvents = require('./auth/events.js');
 
 let displayBooks = function(books){
   let bookListingTemplate = require('./templates/book-listing.handlebars');
@@ -30,6 +20,19 @@ let displayBooks = function(books){
 };
 
 
-$(document).ready(function(){
+let getBooks = function(){
+  return $.ajax({
+    url: "http://book-json.herokuapp.com/books",
+    // method: 'GET',
+    // dataType: 'json'
+  }).done(function(books){
+    displayBooks(books);
+  });
+};
+
+
+// On document ready
+$(() => {
+  authEvents.addHandlers();
   getBooks();
 });
