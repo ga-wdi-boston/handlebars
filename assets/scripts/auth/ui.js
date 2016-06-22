@@ -1,23 +1,10 @@
 'use strict';
 
-// const app = require('./api.js');
 const bookListingTemplate = require('../templates/book-listing.handlebars');
 const books = (books) => {
   if (books) {
-    for (let i = 0; i < books.length; i++) {
-      $('.content').append(bookListingTemplate({
-        books:[
-          {
-          title: books[i].title,
-          desc: books[i].desc
-          }
-        ]
-      }));
+      $('.content').append(bookListingTemplate(books));
     }
-    console.log(books);
-  } else {
-    console.log('Error getting books.');
-  }
 };
 
 const failure = (error) => {

@@ -15,21 +15,14 @@ let getBooks = function(){
   .fail(ui.failure);
 };
 
-// let displayBooks = function(books){
-//   let bookListingTemplate = require('./templates/book-listing.handlebars');
-//   for (let i = 0; i < books.length; i++) {
-//     $('.content').append(bookListingTemplate({
-//       books:[
-//         {
-//         title: books[i].title,
-//         desc: books[i].desc
-//         }
-//       ]
-//     }));
-//   }
-// };
+// Modal portion
 
+$('#open-sign-in').on('click', function () {
+  $('#sign-in-modal').modal('show');
+});
 
 $(document).ready(function(){
   getBooks();
+  $('#sign-out').hide();
+  $('#change-password').hide();
 });
