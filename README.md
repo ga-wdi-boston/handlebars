@@ -76,7 +76,7 @@ Alternatively, we could specify some string to represent all of the HTML we
 want to add, and then add it to the `<ul>` in one fell swoop.
 
 ```javascript
-var newHTML = "";
+let newHTML = "";
 data.forEach(function(song){
   newHTML += "<li><h4>" + song.title + "</h4> By " + song.artist + ", from the album '<em>" + song.album + "</em>'</li>";
 });
