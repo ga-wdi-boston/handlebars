@@ -1,7 +1,8 @@
 'use strict';
 
 const app = {
-  host: 'http://localhost:3000',
+  host: 'http://wdi-my-library.herokuapp.com',
+  // http://book-json.herokuapp.com // WRONGGGGGGGGG
 };
 
 module.exports = app;

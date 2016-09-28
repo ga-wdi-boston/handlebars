@@ -1,17 +1,4 @@
-  {{#each books}}
-
-<!-- {{> partial}}
-Don't uncomment yet -->
-
-
-
-    <h1> <small>Title: {{title}}</small></h1>
-    <div>
-      {{#if desc}}
-        {{desc}}
-      {{else}}
-        No description.
-      {{/if}}
-    </div>
-
-  {{/each}}
+<h1> Books: </h1>
+{{#each books}}
+  {{> partial}}
+{{/each}}
