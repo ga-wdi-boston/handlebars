@@ -1,4 +1,4 @@
-<!-- # Forms
+# Forms
 
 Developers should use `getFormFields` to retrieve data from html forms for API
  requests.
@@ -62,4 +62,4 @@ $(() => {
     api.myRequest(data, ui.success, ui.failure);
   });
 });
-``` -->
+```

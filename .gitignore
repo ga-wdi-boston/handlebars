@@ -1,5 +1,6 @@
 tmp
 dist
+dependencies.js
 vendor.js
 specs.js
 *bundle.js
@@ -62,8 +63,7 @@ jspm_packages
 .LSOverride
 
 # Icon must end with two \r
-Icon
-
+Icon
 
 # Thumbnails
 ._*
