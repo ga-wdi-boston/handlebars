@@ -40,6 +40,9 @@ const deleteBook = function(event){
   let bookId = event.target.getAttribute('data-id');
   console.log("We're about to delete book with id: ", bookId);
   // where does `data-id` come from? Do a cmd + shift + f and search for data-id
+
+
+  // what do I need to do now that I have the id?!?
 };
 
 const addHandlers = () => {
