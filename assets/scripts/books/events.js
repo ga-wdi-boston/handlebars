@@ -8,7 +8,6 @@ const onGetBooks = (event) => {
   api.getBooks()
     .then(ui.getBooksSuccess)
     .then(function(){
-      $('.test-button').on('click', alertTest);
       $('.delete-book').on('click', deleteBook);
     })
     .catch(ui.failure);
@@ -30,15 +29,23 @@ const alertTest = function(){
   console.log("I hate alerts");
 };
 
-const deleteBook = function(){
-  console.log("lets delete a book");
+const deleteBook = function(event){
+  event.preventDefault();
+  // what does this click handler get as an argument by default?
+  // something called `event`. But what it is event!?! What is event.target?!
+  console.log("event.target is", event.target);
+  // is there anything useful in here ^  ^  ^  ????
+
+
+  let bookId = event.target.getAttribute('data-id');
+  console.log("We're about to delete book with id: ", bookId);
+  // where does `data-id` come from? Do a cmd + shift + f and search for data-id
 };
 
 const addHandlers = () => {
   $('#getBooksButton').on('click', onGetBooks);
   $('#getTitlesButton').on('click', onGetTitles);
   $('#clearBooksButton').on('click', onClearBooks);
-  $('.test-button').on('click', alertTest);
 };
 
 module.exports = {

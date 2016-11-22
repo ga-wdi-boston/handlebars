@@ -12,8 +12,8 @@
     {{else}}
       No description.
     {{/if}}
-    <button class='test-button' type="button" name="button">TEST BUTTON</button>
-    <button class='delete-book' type="button" name="button">Delete Book {{book.id}}
+    <button class='delete-book' data={{book.id}}>
+      Delete Book {{book.id}}
     </button>
   </div>
 {{/each}}
