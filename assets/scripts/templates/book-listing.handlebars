@@ -1,15 +1,19 @@
 {{#each books as |book|}}
-
-  <!-- {{> partial}}
-  Don't uncomment yet -->
-  
-  <h1> <small>Title: {{book.title}}</small></h1>
+  <h1> <small>Title: {{book.title}} by
+    {{#if book.author}}
+      {{book.author}}
+    {{else}}
+      <span class='ricks-class'>Anonymous</span>
+    {{/if}}
+  </small></h1>
   <div>
     {{#if book.description}}
       {{book.description}}
     {{else}}
       No description.
     {{/if}}
+    <button class='test-button' type="button" name="button">TEST BUTTON</button>
+    <button class='delete-book' type="button" name="button">Delete Book {{book.id}}
+    </button>
   </div>
-
 {{/each}}
