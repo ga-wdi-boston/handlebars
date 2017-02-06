@@ -135,7 +135,7 @@ replace the all_books/titles listing with the other.
 
 -   [Handlebars Docs](http://handlebarsjs.com/)
 -   [Handlebars in Ten Minutes](http://tutorialzine.com/2015/01/learn-handlebars-in-10-minutes/)
--   [Javascript is Sexy: Handlebars](http://handlebarsjs.com/)
+-   [Javascript is Sexy: Handlebars](http://javascriptissexy.com/handlebars-js-tutorial-learn-everything-about-handlebars-js-javascript-templating/)
 
 ## [License](LICENSE)
 
