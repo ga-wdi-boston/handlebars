@@ -2,12 +2,14 @@
 
 const showBooksTemplate = require('../templates/book-listing.handlebars');
 
-const getBooksSuccess = (books) => {
-
+const getBooksSuccess = (data) => {
+  console.log(data);
+  let showBooksHtml = showBooksTemplate({books: data.books});
+  $('.content').append(showBooksHtml);
 };
 
 const clearBooks = () => {
-  
+  $('.content').empty();
 };
 
 const failure = (error) => {

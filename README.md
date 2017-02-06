@@ -96,7 +96,7 @@ following:
 -   How many times is `book-listing.handlebars` run?
 -   Draw the order in which each separate file is accessed.
 -   Be able to explain in plain english what is happening.
--   What happens if you move the line that defines `bookListingTemplate`?
+-   What happens if you move the line that defines `showBooksTemplate`?
 -   Experiment with `console.log()` and `debugger` to aid in your understanding.
 
 Make sure to note any questions you come acorss and we'll go over them as a
