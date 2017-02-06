@@ -110,6 +110,8 @@ discovered trying to answer the questions.
 What do you think would happen if I tried to add an event handler to something
 contained in my template before it was rendered?
 
+Why do you think we do not commonly use a static value for an HTML ID attribute in templates?
+
 Let's look through the documentation and see if there is anyway we can improve
 this code.
 
