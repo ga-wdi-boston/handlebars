@@ -97,6 +97,7 @@ following:
 -   Draw the order in which each separate file is accessed.
 -   Be able to explain in plain english what is happening.
 -   What happens if you move the line that defines `showBooksTemplate`?
+-   Uncomment the line `{{> partial}}` from `book-listing.handlebars`, what does it do?
 -   Experiment with `console.log()` and `debugger` to aid in your understanding.
 
 Make sure to note any questions you come acorss and we'll go over them as a
