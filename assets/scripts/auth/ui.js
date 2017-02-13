@@ -28,5 +28,5 @@ module.exports = {
   success,
   failure,
   signInSuccess,
-  signOutSuccess
+  signOutSuccess,
 };

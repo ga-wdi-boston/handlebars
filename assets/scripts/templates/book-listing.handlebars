@@ -2,14 +2,16 @@
 
   <!-- {{> partial}}
   Don't uncomment yet -->
-  
-  <h1> <small>Title: {{book.title}}</small></h1>
-  <div>
-    {{#if book.description}}
-      {{book.description}}
-    {{else}}
-      No description.
-    {{/if}}
-  </div>
+
+   <!-- Developers, why are we using data-id and not just id? -->
+   <ul data-id="{{book.id}}">
+     <li> <small>Title: {{book.title}}</small></li>
+     {{#if book.description}}
+        <li>{{book.description}}</li>
+     {{else}}
+        <li>No description.</li>
+      {{/if}}
+      <li><button type="button" name="button">Remove</button></li>
+   </ul>
 
 {{/each}}

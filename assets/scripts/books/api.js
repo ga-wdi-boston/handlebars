@@ -2,11 +2,10 @@
 
 const app = require('../app.js');
 
-let getBooks = function(){
+let getBooks = function () {
   return $.ajax({
-    url: app.host + "/books", // "http://book-json.herokuapp.com/books"
+    url: app.host + '/books', // "http://book-json.herokuapp.com/books"
     method: 'GET',
-    // dataType: 'json'
   });
 };
 
