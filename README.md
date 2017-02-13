@@ -118,21 +118,16 @@ this code.
 
 [Handlebars Helpers Documentation](http://handlebarsjs.com/builtin_helpers.html)
 
-## Code-Along: Let's clean this up
-
-Now given what have discoverd and discussed about Handlebars, let's reorganize
-things and use an API that we have locally -
-[LibraryAPI](https://github.com/ga-wdi-boston/library-api).
-
-## Lab: Refactor, clean up and incorporate some Auth
+## Lab: Event Delegation
 
 Using documentation and your squad, work on getting up the page
 
--   Unless you are successfully logged in, you cannot see any books or buttons
--   Have two buttons, 'All Books' and 'Titles', and when you click one, it show's
-just the information on the button
--   When each button is clicked the button should clear the content div and
-replace the all_books/titles listing with the other.
+-   Refactor the `book-listing.handlebars` template so that the each book's
+information is displayed within an `ul` with a `data-id` attribute.
+-   Add a button called `Remove` as the last `li` for each book.
+-   When a user clicks on the `Remove` button for any specific book, it should
+hide the book's information
+-   Add a prompt that checks if the user is sure they want to remove the book
 
 ## Additional Resources
 
