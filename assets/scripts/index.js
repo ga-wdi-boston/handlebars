@@ -11,6 +11,11 @@ $(() => {
   authEvents.addHandlers();
   bookEvents.addHandlers();
   setAPIOrigin(location, config);
+
+  // $("#content").on("click", 'button', function(e){
+  //   e.preventDefault();
+  //   $(e.target).parent().parent().remove();
+  // });
 });
 
 // use require with a reference to bundle the file and use it in this file

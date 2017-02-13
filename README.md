@@ -129,6 +129,13 @@ information is displayed within an `ul` with a `data-id` attribute.
 hide the book's information
 -   Add a prompt that checks if the user is sure they want to remove the book
 
+## Challenge: API
+
+The `Remove` button only removes the book from the page, not from the database.
+
+- Make a `Delete` request to the API when the `Remove` button is clicked and
+upon success it should remove the book from the page.
+
 ## Additional Resources
 
 -   [Handlebars Docs](http://handlebarsjs.com/)
