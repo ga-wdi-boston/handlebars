@@ -2,36 +2,36 @@
 
 const app = require('../app.js');
 
-const signUp = (data) => {
+const signUp = function (data) {
   return $.ajax({
     url: app.host + '/sign-up',
-    method: "POST",
+    method: 'POST',
     data: data,
   });
 };
 
-const signIn = (data) => {
+const signIn = function (data) {
   return $.ajax({
     url: app.host + '/sign-in',
-    method: "POST",
+    method: 'POST',
     data: data,
   });
 };
 
-const signOut = () => {
+const signOut = function () {
   return $.ajax({
     url: app.host + '/sign-out/' + app.user.id,
-    method: "DELETE",
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
   });
 };
 
-const changePassword = (data) => {
+const changePassword = function (data) {
   return $.ajax({
     url: app.host + '/change-password/' + app.user.id,
-    method: "PATCH",
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },

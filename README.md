@@ -96,7 +96,8 @@ following:
 -   How many times is `book-listing.handlebars` run?
 -   Draw the order in which each separate file is accessed.
 -   Be able to explain in plain english what is happening.
--   What happens if you move the line that defines `bookListingTemplate`?
+-   What happens if you move the line that defines `showBooksTemplate`?
+-   Uncomment the line `{{> partial}}` from `book-listing.handlebars`, what does it do?
 -   Experiment with `console.log()` and `debugger` to aid in your understanding.
 
 Make sure to note any questions you come acorss and we'll go over them as a
@@ -110,32 +111,36 @@ discovered trying to answer the questions.
 What do you think would happen if I tried to add an event handler to something
 contained in my template before it was rendered?
 
+Why do you think we do not commonly use a static value for an HTML ID attribute in templates?
+
 Let's look through the documentation and see if there is anyway we can improve
 this code.
 
 [Handlebars Helpers Documentation](http://handlebarsjs.com/builtin_helpers.html)
 
-## Code-Along: Let's clean this up
-
-Now given what have discoverd and discussed about Handlebars, let's reorganize
-things and use an API that we have locally -
-[LibraryAPI](https://github.com/ga-wdi-boston/library-api).
-
-## Lab: Refactor, clean up and incorporate some Auth
+## Lab: Event Delegation
 
 Using documentation and your squad, work on getting up the page
 
--   Unless you are successfully logged in, you cannot see any books or buttons
--   Have two buttons, 'All Books' and 'Titles', and when you click one, it show's
-just the information on the button
--   When each button is clicked the button should clear the content div and
-replace the all_books/titles listing with the other.
+-   Refactor the `book-listing.handlebars` template so that the each book's
+information is displayed within an `ul` with a `data-id` attribute.
+-   Add a button called `Remove` as the last `li` for each book.
+-   When a user clicks on the `Remove` button for any specific book, it should
+hide the book's information
+-   Add a prompt that checks if the user is sure they want to remove the book
+
+## Challenge: API
+
+The `Remove` button only removes the book from the page, not from the database.
+
+- Make a `Delete` request to the API when the `Remove` button is clicked and 
+upon success it should remove the book from the page.
 
 ## Additional Resources
 
 -   [Handlebars Docs](http://handlebarsjs.com/)
 -   [Handlebars in Ten Minutes](http://tutorialzine.com/2015/01/learn-handlebars-in-10-minutes/)
--   [Javascript is Sexy: Handlebars](http://handlebarsjs.com/)
+-   [Javascript is Sexy: Handlebars](http://javascriptissexy.com/handlebars-js-tutorial-learn-everything-about-handlebars-js-javascript-templating/)
 
 ## [License](LICENSE)
 
